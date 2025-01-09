@@ -1,6 +1,6 @@
 # lidar_camera_record
 
-This is a ros repo for simutaniously recording **Livox HAP** lidar, **Livox AVIA** lidar and **Hikrobot camera** iamge messagess.
+This is a ros repo for simultaneously recording **Livox HAP** lidar, **Livox AVIA** lidar and **Hikrobot camera** image messages.
 
 ## 1. Reference
 
@@ -22,7 +22,7 @@ sudo apt install libeigen3-dev
 
 ### 2.3. Ceres Solver
 
-**Attention!** Latest version of Ceres would incure errors when biulding, please install **Ceres 2.0.0** instead following [Ceres Installation](http://ceres-solver.org/installation.html)
+**Attention!** Latest version of Ceres would incur errors when building, please install **Ceres 2.0.0** instead following [Ceres Installation](http://ceres-solver.org/installation.html)
 
 ### 2.4. PCL
 
@@ -43,7 +43,7 @@ cd /opt/MVS
 # test the software
 bash ./bin/MVS.sh
 
-# remove confliction files
+# remove conflict files
 rm -f ./lib/32/libusb-1.0.so.0
 rm -f ./lib/64/libusb-1.0.so.0
 
@@ -62,6 +62,16 @@ cd build && cmake ..
 make
 sudo make install
 ```
+### 2.7 Livox-SDK2
+
+```shell
+git clone https://github.com/Livox-SDK/Livox-SDK2.git
+cd ./Livox-SDK2/
+mkdir build
+cd build
+cmake .. && make -j
+sudo make install
+```
 
 ## 3. Build
 
@@ -74,8 +84,8 @@ ls
 
 source /opt/ros/noetic/setup.sh
 
-# livox_ros_driver2 cannot be biuld with catkin_make
-bash ./src/livox_ros_driver2/biuld.sh ROS1
+# livox_ros_driver2 cannot be built with catkin_make
+bash ./src/livox_ros_driver2/build.sh ROS1
 
 # biuld the remaining modules
 catkin_make
@@ -100,7 +110,7 @@ Example: PIN: 123456, "broadcast_code": "1234561"
             "enable_connect": true,
             "return_mode": 0,
             "coordinate": 0,
-            "imu_rate": "kImuFreq200Hz",
+            "imu_rate": 1,
             "extrinsic_parameter_source": 0,
             "enable_high_sensitivity": false
         },
@@ -144,7 +154,7 @@ Edit parameters in ```./src/mvs_ros_pkg/config/left_camera_trigger.yaml``` to wh
 
 ```
 Example host IPv4 config for HAP:
-Address:        192.168.8.1 // make sure it is defferent from what you set for AVIA
+Address:        192.168.8.1 // make sure it is different from what you set for AVIA
 Subnet mask:    255.255.255.0
 ```
 
