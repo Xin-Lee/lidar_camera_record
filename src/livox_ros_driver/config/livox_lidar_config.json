@@ -5,7 +5,7 @@
             "enable_connect": true,
             "return_mode": 0,
             "coordinate": 0,
-            "imu_rate": kImuFreq200Hz,
+            "imu_rate": 1,
             "extrinsic_parameter_source": 0,
             "enable_high_sensitivity": false
         },
@@ -20,8 +20,8 @@
         }
     ],
     "timesync_config": {
-        "enable_timesync": false,
-        "device_name": "/dev/ttyUSB0",
+        "enable_timesync": true,
+        "device_name": "/dev/ttyACM0",
         "comm_device_type": 0,
         "baudrate_index": 2,
         "parity_index": 0
